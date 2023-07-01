@@ -61,3 +61,30 @@ def single_game(current_player):
             print("Game Drawn")
             print("\n")
             return 'D'
+        
+        # Switching player moves
+        if current_player == 'X':
+            current_player = 'O'
+        else:
+            current_player = 'X'
+
+if __name__ == "__main__":
+
+    print("Player 1")
+    player1 = input("Enter the name : ")
+    print("\n")
+ 
+    print("Player 2")
+    player2 = input("Enter the name : ")
+    print("\n")
+     
+    current_player = player1
+ 
+    player_choice = {'X' : "", 'O' : ""}
+ 
+    options = ['X', 'O']
+
+    score_board = {player1: 0, player2: 0}
+    print(score_board)
+
+    
