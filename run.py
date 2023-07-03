@@ -123,3 +123,10 @@ if __name__ == "__main__":
 
         else:
             print("Not an option! Please try again\n")
+
+        winner = single_game(options[choice-1])
+
+        if winner != 'D' :
+            player_won = player_choice[winner]
+            score_board[player_won] = score_board[player_won] + 1
+            
