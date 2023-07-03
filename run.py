@@ -129,4 +129,12 @@ if __name__ == "__main__":
         if winner != 'D' :
             player_won = player_choice[winner]
             score_board[player_won] = score_board[player_won] + 1
+
+        print("Scores")
+        print(score_board)
+
+        if current_player == player1:
+            current_player = player2
+        else:
+            current_player = player1
             
