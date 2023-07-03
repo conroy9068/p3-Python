@@ -48,19 +48,19 @@ def single_game(current_player):
         # Updating player positions
         player_pos[current_player].append(move)
  
-        # Function call for checking win
-        if check_win(player_pos, current_player):
-            print_table(values)
-            print("Player ", current_player, " has won the game!!")     
-            print("\n")
-            return current_player
+        # # Function call for checking win
+        # if check_win(player_pos, current_player):
+        #     print_table(values)
+        #     print("Player ", current_player, " has won the game!!")     
+        #     print("\n")
+        #     return current_player
  
-        # Function call for checking draw game
-        if check_draw(player_pos):
-            print_table(values)
-            print("Game Drawn")
-            print("\n")
-            return 'D'
+        # # Function call for checking draw game
+        # if check_draw(player_pos):
+        #     print_table(values)
+        #     print("Game Drawn")
+        #     print("\n")
+        #     return 'D'
         
         # Switching player moves
         if current_player == 'X':
@@ -137,4 +137,3 @@ if __name__ == "__main__":
             current_player = player2
         else:
             current_player = player1
-            
