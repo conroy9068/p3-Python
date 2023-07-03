@@ -95,3 +95,31 @@ if __name__ == "__main__":
         print("Enter 2 for O")
         print("Enter 3 to Quit")
 
+        try:
+            choice = int(input())
+        except ValueError:
+            print("Wrong Input!!! Try Again\n")
+            continue
+
+        # Logic for players choice
+        if choice == 1:
+            player_choice['X'] = current_player
+            if current_player == player1:
+                player_choice['O'] = player2
+            else:
+                player_choice['O'] = player1
+
+        elif choice == 2:
+            player_choice['O'] = current_player
+            if current_player == player1:
+                player_choice['X'] = player2
+            else:
+                player_choice['X'] = player1
+
+        elif choice == 3:
+            print("Final Scores")
+            print(score_board)
+            break
+
+        else:
+            print("Not an option! Please try again\n")
