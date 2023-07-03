@@ -16,7 +16,7 @@ def print_table(values):
     print("\n")
 
 # Function to print the score-board
-def print_scoreboard(score_board):
+def print_score_board(score_board):
     print("\t--------------------------------")
     print("\t              SCOREBOARD       ")
     print("\t--------------------------------")
@@ -108,6 +108,7 @@ if __name__ == "__main__":
     print("Player 1")
     player1 = input("Enter the name : ")
     print("\n")
+    
  
     print("Player 2")
     player2 = input("Enter the name : ")
@@ -120,7 +121,7 @@ if __name__ == "__main__":
     options = ['X', 'O']
 
     score_board = {player1: 0, player2: 0}
-    print(score_board)
+    print_score_board(score_board)
 
 # Main game loop
     while True:
@@ -153,7 +154,7 @@ if __name__ == "__main__":
 
         elif choice == 3:
             print("Final Scores")
-            print(score_board)
+            print_score_board(score_board)
             break
 
         else:
@@ -166,10 +167,11 @@ if __name__ == "__main__":
             score_board[player_won] = score_board[player_won] + 1
 
         print("Scores")
-        print(score_board)
+        print_score_board(score_board)
 
         if current_player == player1:
             current_player = player2
         else:
             current_player = player1
+            
             
