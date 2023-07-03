@@ -87,4 +87,11 @@ if __name__ == "__main__":
     score_board = {player1: 0, player2: 0}
     print(score_board)
 
-    
+# Main game loop
+    while True:
+
+        print("Turn to choose for", current_player)
+        print("Enter 1 for X")
+        print("Enter 2 for O")
+        print("Enter 3 to Quit")
+
