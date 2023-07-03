@@ -14,7 +14,20 @@ def print_table(values):
     print("\t  {}  |  {}  |  {}".format(values[6], values[7], values[8]))
     print("\t     |     |")
     print("\n")
+
+# Function to print the score-board
+def print_scoreboard(score_board):
+    print("\t--------------------------------")
+    print("\t              SCOREBOARD       ")
+    print("\t--------------------------------")
  
+    players = list(score_board.keys())
+    print("\t   ", players[0], "\t    ", score_board[players[0]])
+    print("\t   ", players[1], "\t    ", score_board[players[1]])
+ 
+    print("\t--------------------------------\n")
+
+
 ## Function for a single game of Tic Tac Toe
 def single_game(current_player):
  
@@ -48,19 +61,19 @@ def single_game(current_player):
         # Updating player positions
         player_pos[current_player].append(move)
  
-        # # Function call for checking win
-        # if check_win(player_pos, current_player):
-        #     print_table(values)
-        #     print("Player ", current_player, " has won the game!!")     
-        #     print("\n")
-        #     return current_player
+        # Function call for checking win
+        if check_win(player_pos, current_player):
+            print_table(values)
+            print("Player ", current_player, " has won the game!!")     
+            print("\n")
+            return current_player
  
-        # # Function call for checking draw game
-        # if check_draw(player_pos):
-        #     print_table(values)
-        #     print("Game Drawn")
-        #     print("\n")
-        #     return 'D'
+        # Function call for checking draw game
+        if check_draw(player_pos):
+            print_table(values)
+            print("Game Drawn")
+            print("\n")
+            return 'D'
         
         # Switching player moves
         if current_player == 'X':
@@ -137,3 +150,4 @@ if __name__ == "__main__":
             current_player = player2
         else:
             current_player = player1
+            
