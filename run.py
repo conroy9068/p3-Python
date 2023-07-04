@@ -1,16 +1,24 @@
+"""
+Tic Tac Toe Game
+
+This python code defines a text-based Tic Tac Toe game that can be played in the terminal.
+It supports two players, each player enters their names at the beginning of the game.
+The players then take turns selecting their symbol and choosing where to place their symbol on the game board.
+The players continue to place their symbol in spaces until one player wins by having three of their symbol in a row,
+or until the game is a draw because all spaces on the board are filled then there is no winner.
+"""
+
+
 # Function to print Tic Tac Toe Table
 def print_table(values):
     print("\n")
     print("\t     |     |")
     print("\t  {}  |  {}  |  {}".format(values[0], values[1], values[2]))
     print('\t_____|_____|_____')
- 
     print("\t     |     |")
     print("\t  {}  |  {}  |  {}".format(values[3], values[4], values[5]))
     print('\t_____|_____|_____')
- 
     print("\t     |     |")
- 
     print("\t  {}  |  {}  |  {}".format(values[6], values[7], values[8]))
     print("\t     |     |")
     print("\n")
