@@ -26,6 +26,33 @@ print(sheet.acell('A1').value)
 
 # Function to print Tic Tac Toe Table
 def print_table(values):
+    """
+    Prints a table using the provided list of values.
+
+    Args:
+        values (list): A list of 9 values representing the table cells. The values
+            should be provided in the following order:
+                [0] [1] [2]
+                [3] [4] [5]
+                [6] [7] [8]
+
+    Returns:
+        None
+
+    Example:
+        >>> values = ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
+        >>> print_table(values)
+        
+                     |     |
+                  X  |  O  |  X
+                _____|_____|_____
+                     |     |
+                  O  |  X  |  O
+                _____|_____|_____
+                     |     |
+                  X  |  O  |  X
+                     |     |
+    """
     print("\n")
     print("\t     |     |")
     print("\t  {}  |  {}  |  {}".format(values[0], values[1], values[2]))
@@ -126,16 +153,11 @@ if __name__ == "__main__":
     print("Player 1")
     player1 = input("Enter the name : ")
     print("\n")
-    
- 
     print("Player 2")
     player2 = input("Enter the name : ")
     print("\n")
-     
     current_player = player1
- 
     player_choice = {'X' : "", 'O' : ""}
- 
     options = ['X', 'O']
 
     score_board = {player1: 0, player2: 0}
