@@ -3,14 +3,15 @@ Tic Tac Toe Game
 
 This python code defines a text-based Tic Tac Toe game that can be played in the terminal.
 It supports two players, each player enters their names at the beginning of the game.
-The players then take turns selecting their symbol and choosing where to place their symbol on the game board.
+The players then take turns selecting their symbol and choosing where to place their symbol on the board.
 The players continue to place their symbol in spaces until one player wins by having three of their symbol in a row,
 or until the game is a draw because all spaces on the board are filled then there is no winner.
 """
 import gspread 
 from oauth2client.service_account import ServiceAccountCredentials
 
-scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
+scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',
+         "https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name('./tic-tac-toe-391816-dbba42d14a1b.json', scope)
 client = gspread.authorize(creds)
 
@@ -18,7 +19,7 @@ spreadsheet = client.open('Tic Tac Toe Score Database')
 sheet = spreadsheet.get_worksheet(0)  # 0 means first sheet
 
 # write a value
-sheet.update_acell('A1', 'Hello')
+sheet.update_acell('A1', 'Hello user')
 
 # read a value
 print(sheet.acell('A1').value)
@@ -51,19 +52,16 @@ def print_score_board(score_board):
 
 # Function to check for winner
 def check_win(player_pos, cur_player):
-     
         # All possible winning combinations
-        soln = [[1, 2, 3], [4, 5, 6], [7, 8, 9],  
-                [1, 4, 7], [2, 5, 8], [3, 6, 9],  
+        soln = [[1, 2, 3], [4, 5, 6], [7, 8, 9],
+                [1, 4, 7], [2, 5, 8], [3, 6, 9],
                 [1, 5, 9], [3, 5, 7]]
-     
         # Loop to check if any winning combination is satisfied
         for x in soln:
             if all(y in player_pos[cur_player] for y in x):
-     
                 # Return True if any winning combination satisfies
                 return True
-        # Return False if no combination is satisfied       
+        # Return False if no combination is satisfied
         return False
 
 # Function to check if the game is drawn
@@ -74,45 +72,43 @@ def check_draw(player_pos):
 
 ## Function for a single game of Tic Tac Toe
 def single_game(current_player):
- 
+
     values = [' ' for x in range(9)]
-     
+
     # Stores the positions occupied by X and O
     player_pos = {'X':[], 'O':[]}
-     
+
     # Game Loop for a single game of Tic Tac Toe
     while True:
         print_table(values)
-         
         try:
             print("Player ", current_player, " turn. Which box? : ", end="")
-            move = int(input()) 
+            move = int(input())
         except ValueError:
             print("Wrong Input!!! Try Again")
             continue
- 
+
         if move < 1 or move > 9:
             print("Wrong Input!!! Try Again")
             continue
- 
+
         if values[move-1] != ' ':
             print("Place already filled. Try again!!")
             continue
- 
-        # Updating grid status 
+
+        # Updating grid status
         values[move-1] = current_player
- 
+
         # Updating player positions
         player_pos[current_player].append(move)
- 
+
         # Function call for checking win
         if check_win(player_pos, current_player):
             print_table(values)
-            print("Player ", current_player, " has won the game!!")     
+            print("Player ", current_player, " has won the game!!")
             print("\n")
             return current_player
-        
-        # Function call for checking draw game
+# Function call for checking draw game
         if check_draw(player_pos):
             print_table(values)
             print("Game Drawn")
@@ -177,7 +173,7 @@ if __name__ == "__main__":
         elif choice == 3:
             print("Final Scores")
             print_score_board(score_board)
-            break
+            
 
         else:
             print("Not an option! Please try again\n")
@@ -195,5 +191,4 @@ if __name__ == "__main__":
             current_player = player2
         else:
             current_player = player1
-            
-            
+
