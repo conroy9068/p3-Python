@@ -1,9 +1,10 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome USER_NAME,
+Welcome to Tic Tac Toe!
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+This is a simple game of Tic Tac Toe that you can play in your browser. It is built using Python.
 
+Users are asked to enter their name and then choose whether they want to be X or O. The game will then begin.
 ## Reminders
 
 * Your code must be placed in the `run.py` file
