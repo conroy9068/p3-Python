@@ -7,7 +7,21 @@ The players then take turns selecting their symbol and choosing where to place t
 The players continue to place their symbol in spaces until one player wins by having three of their symbol in a row,
 or until the game is a draw because all spaces on the board are filled then there is no winner.
 """
+import gspread 
+from oauth2client.service_account import ServiceAccountCredentials
 
+scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
+creds = ServiceAccountCredentials.from_json_keyfile_name('./tic-tac-toe-391816-dbba42d14a1b.json', scope)
+client = gspread.authorize(creds)
+
+spreadsheet = client.open('Tic Tac Toe Score Database')
+sheet = spreadsheet.get_worksheet(0)  # 0 means first sheet
+
+# write a value
+sheet.update_acell('A1', 'Hello')
+
+# read a value
+print(sheet.acell('A1').value)
 
 # Function to print Tic Tac Toe Table
 def print_table(values):
