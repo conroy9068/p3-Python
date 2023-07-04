@@ -173,7 +173,14 @@ if __name__ == "__main__":
         elif choice == 3:
             print("Final Scores")
             print_score_board(score_board)
-            
+            # update player1's score
+            sheet.update_acell('A1', f"{player1}'s Score")
+            sheet.update_acell('B1', score_board[player1])
+
+            # update player2's score
+            sheet.update_acell('A2', f"{player2}'s Score")
+            sheet.update_acell('B2', score_board[player2])
+            break       
 
         else:
             print("Not an option! Please try again\n")
