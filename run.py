@@ -3,8 +3,8 @@ Tic Tac Toe Game
 
 This python code defines a text-based Tic Tac Toe game that can be played in the terminal.
 It supports two players, each player enters their names at the beginning of the game.
-The players then take turns selecting their symbol and choosing where to place their symbol on the board.
-The players continue to place their symbol in spaces until one player wins by having three of their symbol in a row,
+The players then take turns selecting their symbol and choosing where to place it.
+The players place their symbol in spaces until one player wins by having three in a row,
 or until the game is a draw because all spaces on the board are filled then there is no winner.
 """
 import gspread 
@@ -67,29 +67,50 @@ def print_table(values):
 
 # Function to print the score-board
 def print_score_board(score_board):
+    """
+    Prints the score board with player names and their scores.
+
+    Args:
+        score_board (dict): A dictionary containing player names as keys and their
+            scores as values.
+
+    Returns:
+        None
+
+    Example:
+        >>> score_board = {'Player 1': 10, 'Player 2': 5}
+        >>> print_score_board(score_board)
+
+        --------------------------------
+                      SCOREBOARD
+        --------------------------------
+           Player 1        10
+           Player 2        5
+        --------------------------------
+    """
     print("\t--------------------------------")
     print("\t              SCOREBOARD       ")
     print("\t--------------------------------")
- 
+
     players = list(score_board.keys())
     print("\t   ", players[0], "\t    ", score_board[players[0]])
     print("\t   ", players[1], "\t    ", score_board[players[1]])
- 
+
     print("\t--------------------------------\n")
 
 # Function to check for winner
 def check_win(player_pos, cur_player):
-        # All possible winning combinations
-        soln = [[1, 2, 3], [4, 5, 6], [7, 8, 9],
+    # All possible winning combinations
+    soln = [[1, 2, 3], [4, 5, 6], [7, 8, 9],
                 [1, 4, 7], [2, 5, 8], [3, 6, 9],
                 [1, 5, 9], [3, 5, 7]]
-        # Loop to check if any winning combination is satisfied
-        for x in soln:
-            if all(y in player_pos[cur_player] for y in x):
+    # Loop to check if any winning combination is satisfied
+    for x in soln:
+        if all(y in player_pos[cur_player] for y in x):
                 # Return True if any winning combination satisfies
-                return True
-        # Return False if no combination is satisfied
-        return False
+            return True
+    # Return False if no combination is satisfied
+    return False
 
 # Function to check if the game is drawn
 def check_draw(player_pos):
@@ -135,13 +156,13 @@ def single_game(current_player):
             print("Player ", current_player, " has won the game!!")
             print("\n")
             return current_player
-# Function call for checking draw game
+        # Function call for checking draw game
         if check_draw(player_pos):
             print_table(values)
             print("Game Drawn")
             print("\n")
             return 'D'
-        
+
         # Switching player moves
         if current_player == 'X':
             current_player = 'O'
@@ -202,7 +223,7 @@ if __name__ == "__main__":
             # update player2's score
             sheet.update_acell('A2', f"{player2}'s Score")
             sheet.update_acell('B2', score_board[player2])
-            break       
+            break
 
         else:
             print("Not an option! Please try again\n")
