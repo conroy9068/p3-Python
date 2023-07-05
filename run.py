@@ -100,6 +100,23 @@ def print_score_board(score_board):
 
 # Function to check for winner
 def check_win(player_pos, cur_player):
+    """
+    Checks if the current player has won the game based on their positions.
+
+    Args:
+        player_pos (dict): A dictionary containing player positions as keys and
+            a list of positions occupied by each player as values.
+        cur_player (str): The current player's identifier.
+
+    Returns:
+        bool: True if the current player has won, False otherwise.
+
+    Example:
+        >>> player_pos = {'Player 1': [1, 2, 3], 'Player 2': [4, 5, 6]}
+        >>> cur_player = 'Player 1'
+        >>> check_win(player_pos, cur_player)
+        True
+    """
     # All possible winning combinations
     soln = [[1, 2, 3], [4, 5, 6], [7, 8, 9],
                 [1, 4, 7], [2, 5, 8], [3, 6, 9],
@@ -114,6 +131,21 @@ def check_win(player_pos, cur_player):
 
 # Function to check if the game is drawn
 def check_draw(player_pos):
+    """
+    Checks if the game is drawn.
+
+    Args:
+        player_pos (dict): A dictionary containing player positions as keys and
+            a list of positions occupied by each player as values.
+            
+    Returns:
+        bool: True if the game is drawn, False otherwise.
+                
+    Example:
+        >>> player_pos = {'Player 1': [1, 2, 3], 'Player 2': [4, 5, 6]}
+        >>> check_draw(player_pos)
+            False
+    """
     if len(player_pos['X']) + len(player_pos['O']) == 9:
         return True
     return False   
