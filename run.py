@@ -18,12 +18,6 @@ client=gspread.authorize(creds)
 spreadsheet = client.open('Tic Tac Toe Score Database')
 sheet = spreadsheet.get_worksheet(0)  # 0 means first sheet
 
-# write a value
-sheet.update_acell('A1', 'Hello user')
-
-# read a value
-print(sheet.acell('A1').value)
-
 # Function to print Tic Tac Toe Table
 def print_table(values):
     """
