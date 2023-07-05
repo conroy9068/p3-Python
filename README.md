@@ -5,6 +5,7 @@ Welcome to Tic Tac Toe!
 This is a simple game of Tic Tac Toe that you can play in your browser. It is built using Python.
 
 Users are asked to enter their name and then choose whether they want to be X or O. The game will then begin.
+
 ## Reminders
 
 * Your code must be placed in the `run.py` file
@@ -32,5 +33,7 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 Happy coding!
 
 ## Resources
+
 - [Tic Tac Toe Tutorial](https://www.askpython.com/python/examples/tic-tac-toe-using-python)
 - [Google sheet API setup](http://ai2.appinventor.mit.edu/reference/other/googlesheets-api-setup.html)
+- [Python sleep function](https://www.freecodecamp.org/news/the-python-sleep-function-how-to-make-python-wait-a-few-seconds-before-continuing-with-example-commands/)
