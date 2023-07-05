@@ -1,10 +1,11 @@
-# Your requirements go here
-gspread: This is a Python client library for Google Sheets. It allows you to interact with Google Sheets using Python, 
-providing functions to create, modify, and delete Google Sheets and the data within them. 
-With gspread, you can automate tasks related to Google Sheets or use Google Sheets as a simple database for your Python application. 
-The import gspread statement allows your code to use the gspread library.
-
-oauth2client: This is a Python library for accessing resources protected by OAuth 2.0. 
-OAuth 2.0 is an authorization protocol that allows an application to obtain access to HTTP services. 
-The ServiceAccountCredentials class from the oauth2client.service_account module is used for OAuth 2.0 service accounts, 
-which are commonly used for server-to-server interactions that must run in the background, without immediate interaction with a user.
+astroid==2.15.5
+autopep8==2.0.1
+dill==0.3.6
+isort==5.12.0
+lazy-object-proxy==1.9.0
+mccabe==0.7.0
+platformdirs==3.8.0
+pycodestyle==2.10.0
+pylint==2.17.4
+tomlkit==0.11.8
+wrapt==1.15.0
