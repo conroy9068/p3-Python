@@ -7,13 +7,13 @@ The players then take turns selecting their symbol and choosing where to place i
 The players place their symbol in spaces until one player wins by having three in a row,
 or until the game is a draw because all spaces on the board are filled then there is no winner.
 """
-import gspread 
+import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',
          "https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name('./tic-tac-toe-391816-dbba42d14a1b.json', scope)
-client = gspread.authorize(creds)
+creds=ServiceAccountCredentials.from_json_keyfile_name('./tic-tac-toe-391816-dbba42d14a1b.json', scope)
+client=gspread.authorize(creds)
 
 spreadsheet = client.open('Tic Tac Toe Score Database')
 sheet = spreadsheet.get_worksheet(0)  # 0 means first sheet
@@ -122,8 +122,8 @@ def check_win(player_pos, cur_player):
                 [1, 4, 7], [2, 5, 8], [3, 6, 9],
                 [1, 5, 9], [3, 5, 7]]
     # Loop to check if any winning combination is satisfied
-    for x in soln:
-        if all(y in player_pos[cur_player] for y in x):
+    for x_position in soln:
+        if all(y in player_pos[cur_player] for y in x_position):
                 # Return True if any winning combination satisfies
             return True
     # Return False if no combination is satisfied
@@ -148,11 +148,23 @@ def check_draw(player_pos):
     """
     if len(player_pos['X']) + len(player_pos['O']) == 9:
         return True
-    return False   
+    return False
 
 ## Function for a single game of Tic Tac Toe
-def single_game(current_player):
+def single_game(player):
+    """
+    Runs a single game of Tic Tac Toe.
 
+    Args:
+        current_player (str): The current player's identifier.
+
+    Returns:
+        str: The winning player's identifier, or 'D' if the game is drawn.
+
+    Example:
+        >>> single_game('Player 1')
+        Player 1
+    """
     values = [' ' for x in range(9)]
 
     # Stores the positions occupied by X and O
@@ -162,7 +174,7 @@ def single_game(current_player):
     while True:
         print_table(values)
         try:
-            print("Player ", current_player, " turn. Which box? : ", end="")
+            print("Player ", player, " turn. Which box? : ", end="")
             move = int(input())
         except ValueError:
             print("Wrong Input!!! Try Again")
@@ -177,17 +189,18 @@ def single_game(current_player):
             continue
 
         # Updating grid status
-        values[move-1] = current_player
+        values[move-1] = player
 
         # Updating player positions
-        player_pos[current_player].append(move)
+        player_pos[player].append(move)
 
         # Function call for checking win
-        if check_win(player_pos, current_player):
+        if check_win(player_pos, player):
             print_table(values)
-            print("Player ", current_player, " has won the game!!")
+            print("Player ", player, " has won the game!!")
             print("\n")
-            return current_player
+            return player
+
         # Function call for checking draw game
         if check_draw(player_pos):
             print_table(values)
@@ -196,10 +209,10 @@ def single_game(current_player):
             return 'D'
 
         # Switching player moves
-        if current_player == 'X':
-            current_player = 'O'
+        if player == 'X':
+            player = 'O'
         else:
-            current_player = 'X'
+            player = 'X'
 
 if __name__ == "__main__":
 
@@ -213,8 +226,8 @@ if __name__ == "__main__":
     player_choice = {'X' : "", 'O' : ""}
     options = ['X', 'O']
 
-    score_board = {player1: 0, player2: 0}
-    print_score_board(score_board)
+    score_board_results = {player1: 0, player2: 0}
+    print_score_board(score_board_results)
 
 # Main game loop
     while True:
@@ -247,14 +260,14 @@ if __name__ == "__main__":
 
         elif choice == 3:
             print("Final Scores")
-            print_score_board(score_board)
+            print_score_board(score_board_results)
             # update player1's score
             sheet.update_acell('A1', f"{player1}'s Score")
-            sheet.update_acell('B1', score_board[player1])
+            sheet.update_acell('B1', score_board_results[player1])
 
             # update player2's score
             sheet.update_acell('A2', f"{player2}'s Score")
-            sheet.update_acell('B2', score_board[player2])
+            sheet.update_acell('B2', score_board_results[player2])
             break
 
         else:
@@ -264,13 +277,12 @@ if __name__ == "__main__":
 
         if winner != 'D' :
             player_won = player_choice[winner]
-            score_board[player_won] = score_board[player_won] + 1
+            score_board_results[player_won] = score_board_results[player_won] + 1
 
         print("Scores")
-        print_score_board(score_board)
+        print_score_board(score_board_results)
 
         if current_player == player1:
             current_player = player2
         else:
             current_player = player1
-
