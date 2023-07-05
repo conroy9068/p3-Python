@@ -7,6 +7,9 @@ The players then take turns selecting their symbol and choosing where to place i
 The players place their symbol in spaces until one player wins by having three in a row,
 or until the game is a draw because all spaces on the board are filled then there is no winner.
 """
+
+from time import sleep
+
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
@@ -49,13 +52,13 @@ def print_table(values):
     """
     print("\n")
     print("\t     |     |")
-    print("\t  {}  |  {}  |  {}".format(values[0], values[1], values[2]))
+    print(f"\t  {values[0]}  |  {values[1]}  |  {values[2]}")
     print('\t_____|_____|_____')
     print("\t     |     |")
-    print("\t  {}  |  {}  |  {}".format(values[3], values[4], values[5]))
+    print(f"\t  {values[0]}  |  {values[1]}  |  {values[2]}")
     print('\t_____|_____|_____')
     print("\t     |     |")
-    print("\t  {}  |  {}  |  {}".format(values[6], values[7], values[8]))
+    print(f"\t  {values[0]}  |  {values[1]}  |  {values[2]}")
     print("\t     |     |")
     print("\n")
 
@@ -208,7 +211,47 @@ def single_game(player):
         else:
             player = 'X'
 
+# Start of the game
 if __name__ == "__main__":
+
+    print("""
+    888   d8b        888                   888                    
+    888   Y8P        888                   888                    
+    888              888                   888                    
+    888888888 .d8888b888888 8888b.  .d8888b888888 .d88b.  .d88b.  
+    888   888d88P"   888       "88bd88P"   888   d88""88bd8P  Y8b 
+    888   888888     888   .d888888888     888   888  88888888888 
+    Y88b. 888Y88b.   Y88b. 888  888Y88b.   Y88b. Y88..88PY8b.     
+    "Y888888 "Y8888P "Y888"Y888888 "Y8888P "Y888 "Y88P"  "Y8888  
+    """)
+
+    sleep(2)
+
+
+    print("""
+    Welcome to Tic Tac Toe!
+    In this game, two players will take turns marking the spaces in a 3x3 grid. The players will choose whether to play as 'X' or 'O' after each game.
+    The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
+    It's a fun game that you can play anytime to challenge your strategic abilities.
+
+    Rules of the game:
+    1. The game is played on a grid that's 3 squares by 3 squares.
+    2. Players choose their symbol ('X' or 'O') before starting each game. 
+    3. Players take turns putting their marks in empty squares.
+    4. The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.
+    5. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
+
+    Here's what the board looks like:
+
+       1   |   2   |   3   
+    ------------------------
+       4   |   5   |   6   
+    ------------------------
+       7   |   8   |   9   
+
+    Players will choose a number from 1-9 to place their mark in the corresponding square.
+    Enjoy playing Tic Tac Toe!
+    """)
 
     print("Player 1")
     player1 = input("Enter the name : ")
