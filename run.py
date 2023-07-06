@@ -55,10 +55,10 @@ def print_table(values):
     print(f"\t  {values[0]}  |  {values[1]}  |  {values[2]}")
     print('\t_____|_____|_____')
     print("\t     |     |")
-    print(f"\t  {values[0]}  |  {values[1]}  |  {values[2]}")
+    print(f"\t  {values[3]}  |  {values[4]}  |  {values[5]}")
     print('\t_____|_____|_____')
     print("\t     |     |")
-    print(f"\t  {values[0]}  |  {values[1]}  |  {values[2]}")
+    print(f"\t  {values[6]}  |  {values[7]}  |  {values[8]}")
     print("\t     |     |")
     print("\n")
 
@@ -211,7 +211,6 @@ def single_game(player):
         else:
             player = 'X'
 
-# Start of the game
 if __name__ == "__main__":
 
     print("""
@@ -230,7 +229,7 @@ if __name__ == "__main__":
 
     print("""
     Welcome to Tic Tac Toe!
-    In this game, two players will take turns marking the spaces in a 3x3 grid. The players will choose whether to play as 'X' or 'O' after each game.
+    In this game, two players will take turns marking the spaces in a 3x3 grid. The players have the freedom to choose whether to play as 'X' or 'O' after each game.
     The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
     It's a fun game that you can play anytime to challenge your strategic abilities.
 
