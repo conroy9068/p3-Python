@@ -12,6 +12,24 @@ Users are asked to enter their name and then choose whether they want to be X or
 * Your dependencies must be placed in the `requirements.txt` file
 * Do not edit any of the other files or your code may not deploy properly
 
+## Technology Used
+- Python
+    - Used to create the application
+
+- Heroku
+    - Used to deploy and host the application
+
+- Github
+    - Used to store the code
+
+- Visual Studio Code
+    - IDE used to write the code
+
+- Git
+    - Used to push the code to Github and create version control
+
+
+
 ## Creating the Heroku app
 
 When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
@@ -37,3 +55,4 @@ Happy coding!
 - [Tic Tac Toe Tutorial](https://www.askpython.com/python/examples/tic-tac-toe-using-python)
 - [Google sheet API setup](http://ai2.appinventor.mit.edu/reference/other/googlesheets-api-setup.html)
 - [Python sleep function](https://www.freecodecamp.org/news/the-python-sleep-function-how-to-make-python-wait-a-few-seconds-before-continuing-with-example-commands/)
+- [ASCII Art](https://ascii.co.uk/art/tictactoe)
