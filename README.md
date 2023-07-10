@@ -9,6 +9,14 @@ Users are asked to enter their name and then choose whether they want to be X or
 [Live Site](https://p3-python-tic-tac-toe-588f3ed03006.herokuapp.com/).
 
 ## Table of Contents
+1. [Control Flow Diagram](#control-flow-diagram)
+2. [Game Flow](#game-flow)
+3. [Game Rules](#game-rules)
+4. [Features](#features)
+5. [Testing](#testing)
+6. [Technology Used](#technology-used)
+7. [Creating the Heroku app](#creating-the-heroku-app)
+8. [Resources](#resources)
 
 
 ## Control Flow Diagram
