@@ -70,13 +70,37 @@ Players will choose a number from 1-9 to place their mark in the corresponding s
 
 ### Existing Features
 
-- **Google Sheet** - The game will add a record of the game to a Google Sheet. This will include the date and time, the player names, the winner and the final score.[Link to Google Sheet](https://docs.google.com/spreadsheets/d/1CFEjZdeQxCWNoqitT0pSJT--rjcz3kQOPFTuXDeY4S4/edit?usp=sharing)
+- **Google Sheet** - The game will add a record of the game to a Google Sheet. This will include the date and time, the player names, the winner and the final score.
 
-- **Timer** - There is a timer delaying the introduction test so that just the ascii art is displayed for a few seconds before the game begins. [Screenshot](https://github.com/conroy9068/p3-Python/blob/main/assets/images/sleep-timer.png)
+    [Link to Google Sheet](https://docs.google.com/spreadsheets/d/1CFEjZdeQxCWNoqitT0pSJT--rjcz3kQOPFTuXDeY4S4/edit?usp=sharing)
 
-- **Move Validation** - The game will check if the user has entered a valid move. If they have not, they will be asked to enter a valid move. [Screenshot](https://github.com/conroy9068/p3-Python/blob/main/assets/images/gameboard-move-validation.png)
+- **Timer** - There is a timer delaying the introduction test so that just the ascii art is displayed for a few seconds before the game begins. 
+
+    [Screenshot](https://github.com/conroy9068/p3-Python/blob/main/assets/images/sleep-timer.png)
+
+- **Move Validation** - The game will check if the user has entered a valid move. If they have not, they will be asked to enter a valid move. 
+    
+    [Screenshot](https://github.com/conroy9068/p3-Python/blob/main/assets/images/gameboard-move-validation.png)
 
 ### Features Left to Implement
+
+- **AI** - I would like to add an AI so that the user can play against the computer.
+
+- **Color/UI** - I would like to add color and a nicer UI to the game to make it more visually appealing.
+
+## Testing
+
+I used the following tools to test the application:
+
+- [autopep8](https://marketplace.visualstudio.com/items?itemName=ms-python.autopep8) - Used to format the code to PEP8 standards
+
+- [pylint](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylint) - Used to check the code for errors
+
+- Testing locally - Testing was carried out during the development of the project. I used the terminal to run the application locally and test the functionality.
+
+- [Heroku](https://p3-python-tic-tac-toe-588f3ed03006.herokuapp.com/) - The application was deployed to Heroku and tested there.
+
+
 
 ## Technology Used
 - Python
