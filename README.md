@@ -1,4 +1,4 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Tic Tac Toe
 
 Welcome to Tic Tac Toe!
 
@@ -6,11 +6,14 @@ This is a simple game of Tic Tac Toe that you can play in your browser. It is bu
 
 Users are asked to enter their name and then choose whether they want to be X or O. The game will then begin.
 
-## Reminders
+[Live Site](https://p3-python-tic-tac-toe-588f3ed03006.herokuapp.com/).
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## Table of Contents
+
+
+## Control Flow Diagram
+
+![Game Flow](https://github.com/conroy9068/p3-Python/blob/main/assets/images/control-flow.png)
 
 ## Technology Used
 - Python
