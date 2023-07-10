@@ -108,23 +108,22 @@ I used the following tools to test the application:
 - **Git** - Used to push the code to Github and create version control
 ## Creating the Heroku app
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+The project was deployed to Heroku using the Code Institute template.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+Here are the steps to follow to deploy your project to Heroku:
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+1. Create a `requirements.txt` file using the terminal command `pip freeze > requirements.txt`.
+2. Create a new app on the [Heroku website](https://dashboard.heroku.com/apps) by clicking the "New" button in your dashboard. Give it a name and set the region to Europe.
+3. In the Heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+4. For the key put "CRED" and for the value put the contents of your `creds.json` file (you can copy and paste it).
+5. In the buildpacks section, add the following packs in the order below:
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+    1. `heroku/python`
+    2. `heroku/nodejs`
+6. Now click on the tab "Deploy" > "Deployment method" and select GitHub.
+7. Confirm the linking of the Heroku app to the correct GitHub repository.
+8. In the "Manual Deploy" section below, select the main branch then click "Deploy Branch".
+9. The site will now be deployed. You can click the "Open App" button at the top of the page to launch it.
 
 ## Resources
 
