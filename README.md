@@ -14,9 +14,10 @@ Users are asked to enter their name and then choose whether they want to be X or
 3. [Game Rules](#game-rules)
 4. [Features](#features)
 5. [Testing](#testing)
-6. [Technology Used](#technology-used)
-7. [Creating the Heroku app](#creating-the-heroku-app)
-8. [Resources](#resources)
+6. [Bugs](#bugs)
+7. [Technology Used](#technology-used)
+8. [Creating the Heroku app](#creating-the-heroku-app)
+9. [Resources](#resources)
 
 
 ## Control Flow Diagram
@@ -108,6 +109,11 @@ I used the following tools to test the application:
 
 - [Heroku](https://p3-python-tic-tac-toe-588f3ed03006.herokuapp.com/) - The application was deployed to Heroku and tested there.
 
+
+## Bugs
+### Fixed Bugs
+- **Invalid Number in Menu causing app to crash** - If the user enters a number that is not 1, 2 or 3 in the menu, the app will crash. 
+[Screenshot](https://github.com/conroy9068/p3-Python/blob/main/assets/images/bug-wrong-number-at-menu-causes-crash.png)
 ## Technology Used
 - **Python** - The application was built using Python
 - **Heroku** - Used to deploy and host the application
@@ -139,3 +145,4 @@ Here are the steps to follow to deploy your project to Heroku:
 - [Google sheet API setup](http://ai2.appinventor.mit.edu/reference/other/googlesheets-api-setup.html)
 - [Python sleep function](https://www.freecodecamp.org/news/the-python-sleep-function-how-to-make-python-wait-a-few-seconds-before-continuing-with-example-commands/)
 - [ASCII Art](https://ascii.co.uk/art/tictactoe)
+
