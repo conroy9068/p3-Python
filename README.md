@@ -20,7 +20,33 @@ I used diagram.net to design the control flow for the game. It can be viewed in 
 
 ## Game Flow
 
-1. The game begins by asking the user to enter their name. This is stored in a variable called `player_name`.
+1. The game begins by asking each user to enter their name. This is stored in a variable called `player_name`.
+
+![Start Screen](https://github.com/conroy9068/p3-Python/blob/main/assets/images/start.png)
+
+![Enter player names](https://github.com/conroy9068/p3-Python/blob/main/assets/images/enter-player-names.png)
+
+2. The user is then asked to choose whether they want to be X or O. This is stored in a variable called `player_symbol`.
+
+![Choose symbol](https://github.com/conroy9068/p3-Python/blob/main/assets/images/chose-x-or-o.png)
+
+3. The game then begins. The user is asked to choose a number from 1-9. This is stored in a variable called `player_choice`. This step is repeated until a winner is found or the board is full.
+
+![Choose move](https://github.com/conroy9068/p3-Python/blob/main/assets/images/single-game-start.png)
+
+4. The game will then check if the user has won after each move. If they have, the game will end and display the winner the user will then be asked if they want to play again.
+
+![Winner](https://github.com/conroy9068/p3-Python/blob/main/assets/images/winner.png)
+
+5. If the user has not won, the game will check if the board is full. If it is, the game will end and display a message saying it is a draw. The user will then be asked if they want to play again.
+
+![Draw](https://github.com/conroy9068/p3-Python/blob/main/assets/images/draw-game.png)
+
+6. If the user chooses to quit the game, the scoreboard with the final scores will be displayed. And a record of the game will be added to the Google Sheet.
+
+![Scoreboard](https://github.com/conroy9068/p3-Python/blob/main/assets/images/quit-game-result.png)
+
+![Google Sheet](https://github.com/conroy9068/p3-Python/blob/main/assets/images/gsheet-db.png)
 
 ## Game Rules
 
@@ -40,7 +66,12 @@ Here's what the board looks like:
 
 Players will choose a number from 1-9 to place their mark in the corresponding square.
 
+## Features
 
+### Existing Features
+
+
+### Features Left to Implement
 
 ## Technology Used
 - Python
