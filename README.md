@@ -18,6 +18,24 @@ I used diagram.net to design the control flow for the game. It can be viewed in 
 
 ![Control Flow](https://github.com/conroy9068/p3-Python/blob/main/assets/images/control-flow.png)
 
+## Game Rules
+
+1. The game is played on a grid that's 3 squares by 3 squares.
+2. Players choose their symbol ('X' or 'O') before starting each game. 
+3. Players take turns putting their marks in empty squares.
+4. The first player to get 3 of her marks in a row (up, down, across, or diagonally).
+5. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
+
+Here's what the board looks like:
+
+            1   |   2   |   3   
+        ------------------------
+            4   |   5   |   6   
+        ------------------------
+            7   |   8   |   9   
+
+Players will choose a number from 1-9 to place their mark in the corresponding square.
+
 ## Technology Used
 - Python
     - Used to create the application
