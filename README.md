@@ -70,6 +70,11 @@ Players will choose a number from 1-9 to place their mark in the corresponding s
 
 ### Existing Features
 
+- **Google Sheet** - The game will add a record of the game to a Google Sheet. This will include the date and time, the player names, the winner and the final score.
+
+- **Timer** - There is a timer delaying the introduction test so that just the ascii art is displayed for a few seconds before the game begins.
+
+- **Move Validation** - The game will check if the user has entered a valid move. If they have not, they will be asked to enter a valid move. [Screenshot](https://github.com/conroy9068/p3-Python/blob/main/assets/images/gameboard-move-validation.png)
 
 ### Features Left to Implement
 
