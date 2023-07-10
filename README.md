@@ -18,6 +18,10 @@ I used diagram.net to design the control flow for the game. It can be viewed in 
 
 ![Control Flow](https://github.com/conroy9068/p3-Python/blob/main/assets/images/control-flow.png)
 
+## Game Flow
+
+1. The game begins by asking the user to enter their name. This is stored in a variable called `player_name`.
+
 ## Game Rules
 
 1. The game is played on a grid that's 3 squares by 3 squares.
@@ -35,6 +39,8 @@ Here's what the board looks like:
             7   |   8   |   9   
 
 Players will choose a number from 1-9 to place their mark in the corresponding square.
+
+
 
 ## Technology Used
 - Python
