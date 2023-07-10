@@ -11,6 +11,7 @@ or until the game is a draw because all spaces on the board are filled then ther
 from time import sleep
 
 import gspread
+
 from oauth2client.service_account import ServiceAccountCredentials
 
 scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',
@@ -229,16 +230,19 @@ if __name__ == "__main__":
 
     print("""
     Welcome to Tic Tac Toe!
-    In this game, two players will take turns marking the spaces in a 3x3 grid. The players have the freedom to choose whether to play as 'X' or 'O' after each game.
-    The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
+    In this game, two players will take turns marking the spaces in a 3x3 grid. 
+    The players have the freedom to choose whether to play as 'X' or 'O' after each game.
+    The player who succeeds in placing three of their marks in a horizontal, vertical, 
+    or diagonal row is the winner.
     It's a fun game that you can play anytime to challenge your strategic abilities.
 
     Rules of the game:
     1. The game is played on a grid that's 3 squares by 3 squares.
     2. Players choose their symbol ('X' or 'O') before starting each game. 
     3. Players take turns putting their marks in empty squares.
-    4. The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.
-    5. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
+    4. The first player to get 3 of her marks in a row (up, down, across, or diagonally).
+    5. When all 9 squares are full, the game is over. 
+        If no player has 3 marks in a row, the game ends in a tie.
 
     Here's what the board looks like:
 
@@ -248,7 +252,8 @@ if __name__ == "__main__":
     ------------------------
        7   |   8   |   9   
 
-    Players will choose a number from 1-9 to place their mark in the corresponding square.
+    Players will choose a number from 1-9 to place their mark
+    in the corresponding square.
     Enjoy playing Tic Tac Toe!
     """)
 
@@ -297,18 +302,12 @@ if __name__ == "__main__":
         elif choice == 3:
             print("Final Scores")
             print_score_board(score_board_results)
-            # update player1's score
-            sheet.update_acell('A1', f"{player1}'s Score")
-            sheet.update_acell('B1', score_board_results[player1])
-
-            # update player2's score
-            sheet.update_acell('A2', f"{player2}'s Score")
-            sheet.update_acell('B2', score_board_results[player2])
             break
 
         else:
-            print("Not an option! Please try again\n")
+            print("Wrong Choice!!!! Try Again\n")
 
+        # Stores the winner in a single game of Tic Tac Toe
         winner = single_game(options[choice-1])
 
         if winner != 'D' :
