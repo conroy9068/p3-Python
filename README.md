@@ -12,8 +12,11 @@ Users are asked to enter their name and then choose whether they want to be X or
 
 
 ## Control Flow Diagram
+I used diagram.net to design the control flow for the game. It can be viewed in full via the link below.
 
-![Game Flow](https://github.com/conroy9068/p3-Python/blob/main/assets/images/control-flow.png)
+[Link to Control Flow Diagram](https://drive.google.com/file/d/1XJ4Ax3YYQIWj0WAvEqjQwolLRIkTeff6/view?usp=sharing)
+
+![Control Flow](https://github.com/conroy9068/p3-Python/blob/main/assets/images/control-flow.png)
 
 ## Technology Used
 - Python
