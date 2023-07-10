@@ -94,32 +94,18 @@ I used the following tools to test the application:
 
 - [autopep8](https://marketplace.visualstudio.com/items?itemName=ms-python.autopep8) - Used to format the code to PEP8 standards
 
-- [pylint](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylint) - Used to check the code for errors
+- [pylint](https://marketplace.visualstudio.com/items?itemName=ms-python.pylint) - Used to check the code for errors
 
 - Testing locally - Testing was carried out during the development of the project. I used the terminal to run the application locally and test the functionality.
 
 - [Heroku](https://p3-python-tic-tac-toe-588f3ed03006.herokuapp.com/) - The application was deployed to Heroku and tested there.
 
-
-
 ## Technology Used
-- Python
-    - Used to create the application
-
-- Heroku
-    - Used to deploy and host the application
-
-- Github
-    - Used to store the code
-
-- Visual Studio Code
-    - IDE used to write the code
-
-- Git
-    - Used to push the code to Github and create version control
-
-
-
+- **Python** - The application was built using Python
+- **Heroku** - Used to deploy and host the application
+- **Github** - Used to store the code
+- **Visual Studio Code** - IDE used to write the code
+- **Git** - Used to push the code to Github and create version control
 ## Creating the Heroku app
 
 When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
