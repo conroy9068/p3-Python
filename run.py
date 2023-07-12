@@ -30,8 +30,7 @@ CREDS = Credentials.from_service_account_info(creds_dict)
 SCOPED_CREDS = CREDS.with_scopes(scope)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Tic Tac Toe Score Database')
-
-
+WORKSHEET = SHEET.get_worksheet(0)
 
 # Function to print Tic Tac Toe Table
 
