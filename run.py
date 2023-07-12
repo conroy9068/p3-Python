@@ -335,6 +335,12 @@ if __name__ == "__main__":
         elif choice == 3:
             print("Final Scores")
             print_score_board(score_result)
+            # update player1's score
+            SHEET.update_acell('A1', f"{player1}'s Score")
+            SHEET.update_acell('B1', score_result[player1])
+            # update player2's score
+            SHEET.update_acell('A2', f"{player2}'s Score")
+            SHEET.update_acell('B2', score_result[player2])
             break
 
         else:
