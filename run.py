@@ -11,6 +11,8 @@ are filled then there is no winner.
 """
 
 from time import sleep
+import os
+import json
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -21,10 +23,14 @@ scope = [
     "https://www.googleapis.com/auth/drive",
 ]
 
-CREDS = Credentials.from_service_account_file('creds.json')
+creds_json = os.getenv('CREDS')
+creds_dict = json.loads(creds_json)
+
+CREDS = Credentials.from_service_account_info(creds_dict)
 SCOPED_CREDS = CREDS.with_scopes(scope)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Tic Tac Toe Score Database')
+
 
 
 # Function to print Tic Tac Toe Table
