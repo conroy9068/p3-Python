@@ -109,13 +109,42 @@ I used the following tools to test the application:
 
 - [Heroku](https://p3-python-tic-tac-toe-588f3ed03006.herokuapp.com/) - The application was deployed to Heroku and tested there.
 
-- ![CI Python Linter Test](https://github.com/conroy9068/p3-Python/blob/main/assets/images/ci-python-linter.png)
+- CI Python Linter Test.
+![CI Python Linter Test](https://github.com/conroy9068/p3-Python/blob/main/assets/images/ci-python-linter.png)
+
+#### Manual Testing
+
+##### Testing Name Inputs
+| Action  | Expected Result | Pass/Fail |
+| ------------- | ------------- | ------------- |
+| Game is started using python run.py  | The program outputs introduction and rules and then "Player 1 Enter the name :", and waits for the user to enter a name  | Pass |
+| Input "David" for player 1's name | The program accepts the input and moves on to player 2  | Pass |
+| Hit enter for player 1's name  | The program outputs "Invalid input. Only alphabets are allowed. Try again.", and prompts for player 1's name again | Pass |
+| Input "!123" for player 1's name  | The program outputs "Invalid input. Only alphabets are allowed. Try again.", and prompts for player 1's name again | Pass |
+| After player 1's name has been entered, player 2 is prompted for a name  | The program outputs "Player 2", and waits for the user to enter a name  | Pass |
+| Input "John" for player 2's name | The program accepts the input and continues with the rest of the program  | Pass |
+| Hit enter for player 2's name  | The program outputs "Invalid input. Only alphabets are allowed. Try again.", and prompts for player 2's name again | Pass |
+| Input "!1234" for player 2's name | The program outputs "Invalid input. Only alphabets are allowed. Try again.", and prompts for player 2's name again  | Pass |
+| After both names have been entered, the program starts. | The program starts and displays the player names in the score board and then asks player 1 to chose a symbol. | Pass |
+
+#### Testing Main Menu Inputs
+
+| Action  | Expected Result | Pass/Fail |
+| ------------- | ------------- | ------------- |
+| At the start of the main menu loop, the current player is prompted to make a choice  | The program outputs "Turn to choose for", followed by the current player's name. It then lists the possible options: 1 for X, 2 for O, 3 to Quit | Pass |
+| Input a non-numeric value or string | The program catches the error and outputs "Wrong Input!!! Try Again\n", prompting the player for their choice again | Pass |
+| Input a number other than 1, 2, or 3 | The program outputs "Wrong Choice!!!! Try Again\n", and prompts the player for their choice again | Pass |
+| Selecting 1 for the current player's choice | The program assigns the symbol 'X' to the current player and 'O' to the other player, and moves on to the next part of the game | Pass |
+| Selecting 2 for the current player's choice | The program assigns the symbol 'O' to the current player and 'X' to the other player, and moves on to the next part of the game | Pass |
+| Selecting 3 for the current player's choice | The program outputs "Final Scores", shows the score board, and exits the game | Pass |
 
 
 
 ## Bugs
 ### Fixed Bugs
 - **Invalid Number in Menu causing app to crash** - If the user enters a number that is not 1, 2 or 3 in the menu, the app will crash. This was fixed by adding a continue statament.
+
+- **Blank name entry would cause the game to crash** - If the user entered a blank name, the game would crash. This was fixed by using the `isalpha()` function to check if the name entered was a string. It also stopped users from user numbers as a name.
 
     [Screenshot](https://github.com/conroy9068/p3-Python/blob/main/assets/images/bug-wrong-number-at-menu-causes-crash.png)
 ## Technology Used
