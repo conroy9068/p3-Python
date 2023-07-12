@@ -258,7 +258,13 @@ if __name__ == "__main__":
     """)
 
     print("Player 1")
-    player1 = input("Enter the name : ")
+    while True:
+        player1 = input("Enter the name : ")
+        if player1.isalpha():
+            break
+        else:
+            print("Invalid input. Only alphabets are allowed. Try again.")
+    print("\n")
     print("\n")
     print("Player 2")
     player2 = input("Enter the name : ")
