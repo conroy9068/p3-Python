@@ -138,6 +138,16 @@ I used the following tools to test the application:
 | Selecting 2 for the current player's choice | The program assigns the symbol 'O' to the current player and 'X' to the other player, and moves on to the next part of the game | Pass |
 | Selecting 3 for the current player's choice | The program outputs "Final Scores", shows the score board, and exits the game | Pass |
 
+#### Testing Game Board Inputs
+| Action  | Expected Result | Pass/Fail |
+| ------------- | ------------- | ------------- |
+| When the game loop starts, the game board is printed and the current player is prompted to choose a box | The game board is displayed with all positions empty and the program outputs "Player [name] turn. Which box? :" | Pass |
+| Input a non-numeric value or string for the box choice | The program catches the ValueError and outputs "Wrong Input!!! Try Again", prompting the player for their choice again | Pass |
+| Input a number less than 1 or greater than 9 for the box choice | The program outputs "Wrong Input!!! Try Again", and prompts the player for their choice again | Pass |
+| Choose a box that's already been filled | The program outputs "Place already filled. Try again!!", and prompts the player for their choice again | Pass |
+| Choose an empty box for the current player's move | The program fills the chosen box with the current player's symbol, checks for win or draw, and switches to the other player | Pass |
+| Current player gets three of their symbols in a row, column, or diagonal | The game board is printed showing the winning line, the program outputs "Player [name] has won the game!!", and the game ends | Pass |
+| All boxes get filled without a win (draw condition) | The game board is printed showing the full board, the program outputs "Game Drawn", and the game ends | Pass |
 
 
 ## Bugs
