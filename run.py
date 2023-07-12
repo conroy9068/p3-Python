@@ -10,10 +10,11 @@ or until the game is a draw because all spaces on the board
 are filled then there is no winner.
 """
 
+import os
+import json
 from time import sleep
 
 import gspread
-
 from oauth2client.service_account import ServiceAccountCredentials
 
 scope = [
@@ -21,14 +22,16 @@ scope = [
     'https://www.googleapis.com/auth/spreadsheets',
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive",
-    ]
-creds = ServiceAccountCredentials.from_json_keyfile_name(
-    './tic-tac-toe.json', scope
-)
+]
+
+creds_json = os.getenv('CREDS')
+creds_dict = json.loads(creds_json)
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+
 client = gspread.authorize(creds)
 
 spreadsheet = client.open('Tic Tac Toe Score Database')
-sheet = spreadsheet.get_worksheet(0)  # 0 means first sheet
+sheet = spreadsheet.get_worksheet(0)  
 
 # Function to print Tic Tac Toe Table
 
