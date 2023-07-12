@@ -24,7 +24,8 @@ scope = [
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(scope)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('love_sandwiches')
+SHEET = GSPREAD_CLIENT.open('Tic Tac Toe Score Database')
+
 
 # Function to print Tic Tac Toe Table
 
