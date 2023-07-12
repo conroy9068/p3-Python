@@ -343,7 +343,6 @@ if __name__ == "__main__":
             WORKSHEET.update_acell('B2', str(score_result[player2]))
             break
 
-
         else:
             print("Wrong Choice!!!! Try Again\n")
             continue
