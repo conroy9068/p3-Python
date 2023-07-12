@@ -267,8 +267,14 @@ if __name__ == "__main__":
     print("\n")
     print("\n")
     print("Player 2")
-    player2 = input("Enter the name : ")
+    while True:
+        player2 = input("Enter the name : ")
+        if player2.isalpha():
+            break
+        else:
+            print("Invalid input. Only alphabets are allowed. Try again.")
     print("\n")
+    
     current_player = player1
     player_choice = {'X' : "", 'O' : ""}
     options = ['X', 'O']
