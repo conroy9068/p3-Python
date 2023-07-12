@@ -110,10 +110,14 @@ I used the following tools to test the application:
 - [Heroku](https://p3-python-tic-tac-toe-588f3ed03006.herokuapp.com/) - The application was deployed to Heroku and tested there.
 
 
+
+
+
 ## Bugs
 ### Fixed Bugs
-- **Invalid Number in Menu causing app to crash** - If the user enters a number that is not 1, 2 or 3 in the menu, the app will crash. 
-[Screenshot](https://github.com/conroy9068/p3-Python/blob/main/assets/images/bug-wrong-number-at-menu-causes-crash.png)
+- **Invalid Number in Menu causing app to crash** - If the user enters a number that is not 1, 2 or 3 in the menu, the app will crash. This was fixed by adding a continue statament.
+
+    [Screenshot](https://github.com/conroy9068/p3-Python/blob/main/assets/images/bug-wrong-number-at-menu-causes-crash.png)
 ## Technology Used
 - **Python** - The application was built using Python
 - **Heroku** - Used to deploy and host the application
@@ -145,4 +149,5 @@ Here are the steps to follow to deploy your project to Heroku:
 - [Google sheet API setup](http://ai2.appinventor.mit.edu/reference/other/googlesheets-api-setup.html)
 - [Python sleep function](https://www.freecodecamp.org/news/the-python-sleep-function-how-to-make-python-wait-a-few-seconds-before-continuing-with-example-commands/)
 - [ASCII Art](https://ascii.co.uk/art/tictactoe)
+- [Is Alpha Function](https://www.w3schools.com/python/ref_string_isalpha.asp)
 
